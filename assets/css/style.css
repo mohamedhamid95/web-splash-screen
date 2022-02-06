@@ -1,0 +1,134 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    background: #000;
+    height: 100%;
+}
+
+
+.wrapper .logo-wrapper {
+    display: flex;
+    color: #fff;
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 10px);
+    animation-name: fade-in-up;
+    animation-duration: 2s;
+}
+
+.logo-sec {
+    transform: translate3d(-50%, -50%, 10px);
+    left: 50%;
+    top: 50%;
+}
+
+.sec-left {
+    position: absolute;
+    z-index: 0;
+    animation-name: animate-left;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    /* left: -50px; */
+}
+
+.sec-left .heading-label {
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+}
+
+
+.sec-right {
+    position: absolute;
+    z-index: 10;
+    animation-name: animate-right;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    /* left: 50px; */
+}
+
+.sec-right img {
+    width: 8rem;
+    background: #000;
+}
+
+/* The animation code */
+@keyframes animate-right {
+    from {
+        left: 0
+    }
+
+    to {
+        left: 8rem;
+    }
+}
+
+@keyframes animate-left {
+    from {
+        left: 0;
+        opacity: 0;
+    }
+
+    to {
+        left: -8rem;
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade-in-up {
+    from {
+        top: 90%;
+        opacity: 0;
+    }
+
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 588px) {
+    .sec-left .heading-label {
+        font-size: 2rem;
+    }
+    .sec-right img {
+        width: 4rem;
+    }
+    
+
+    @keyframes animate-right {
+        from {
+            left: 0
+        }
+    
+        to {
+            left: 4rem;
+        }
+    }
+    
+    @keyframes animate-left {
+        from {
+            left: 0;
+            opacity: 0;
+        }
+    
+        to {
+            left: -4rem;
+            opacity: 1;
+        }
+    }
+}
